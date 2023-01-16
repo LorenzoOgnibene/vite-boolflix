@@ -7,15 +7,15 @@ export default{
   components:{
     AppHeader,
     AppMain,
-  },
+  
   data() {
     return {
       store,
     }
   },
 
+ }
 }
-
 </script>
 
 <template>
@@ -26,5 +26,5 @@ export default{
 <style lang="scss">
   @use './style/general.scss' as*;
   @use './style/partial/variables' as*;
-  
+
 </style>
