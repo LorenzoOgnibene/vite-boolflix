@@ -1,9 +1,12 @@
 <script>
     import axios from 'axios';
     import { store } from '../store'
+    import MovieCard from './MovieCard.vue';
     export default {
         name : 'AppHeader',
-    
+    components:{
+        MovieCard,
+    },
 
     data() {
         return {
@@ -38,6 +41,7 @@
         <input type="search" v-model="store.searchMovie">
         <button @click="getMovies(store.searchMovie)">cerca</button>
     </nav>
+    <MovieCard/>
 </template>
 
 <style lang="">
