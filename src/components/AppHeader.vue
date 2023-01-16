@@ -11,13 +11,14 @@
     data() {
         return {
             store,
-            apiUrl : 'https://api.themoviedb.org/3/search/movie',
+            apiUrlMovies : 'https://api.themoviedb.org/3/search/movie',
+            apiUrlSeries :  'https://api.themoviedb.org/3/search/tv',
             apiKey : '4c2c925074dfd974675224d92a594272',
         }
     },
     methods: {
         getMovies(querySearch){
-                axios.get(this.apiUrl,{
+                axios.get(this.apiUrlMovies,{
                     params: {
                        api_key : this.apiKey,
                        query : querySearch,
@@ -26,6 +27,21 @@
                 .then((response) => {
                     console.log(response.data.results);
                     store.moviesList = response.data.results;
+                    
+                })
+                .catch(function (error){
+                    console.log(error)
+                })
+
+                axios.get(this.apiUrlSeries,{
+                    params: {
+                       api_key : this.apiKey,
+                       query : querySearch,
+                    }
+                })
+                .then((response) => {
+                    console.log(response.data.results);
+                    store.seriesList = response.data.results;
                     
                 })
                 .catch(function (error){
