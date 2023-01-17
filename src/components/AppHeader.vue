@@ -57,9 +57,11 @@
         <input type="search" v-model="store.searchMovie">
         <button @click="getMovies(store.searchMovie)">cerca</button>
     </nav>
-    <MovieCard/>
+    <div class="cards-wrapper">
+        <MovieCard/>
+    </div>
 </template>
 
-<style lang="">
-    
+<style lang="scss">
+
 </style>
