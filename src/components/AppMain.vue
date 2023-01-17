@@ -3,7 +3,7 @@ export default {
     
 }
 </script>
-<template lang="">
+<template>
     <div>
         
     </div>

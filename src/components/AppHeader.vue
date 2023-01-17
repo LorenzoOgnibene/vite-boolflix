@@ -54,8 +54,11 @@
 
 <template >
     <nav>
-        <input type="search" v-model="store.searchMovie">
-        <button @click="getMovies(store.searchMovie)">cerca</button>
+        <img src="../assets/img/logo.webp" alt="">
+        <div class="input-gg">
+            <input type="text" class="" v-model="store.searchMovie" >
+            <button class="btn btn-primary" @click="getMovies(store.searchMovie)">cerca</button>
+        </div>
     </nav>
     <div class="cards-wrapper">
         <MovieCard/>
@@ -63,5 +66,14 @@
 </template>
 
 <style lang="scss">
+    nav{
+        display: flex;
+        padding: 1rem;
+        background-color: black;
+
+        img{
+            width: 100px;
+        }
+    }
 
 </style>

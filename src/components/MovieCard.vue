@@ -18,28 +18,26 @@
 
 <template >
     <div class="movie-card">
-        <div class="row">
-            <div  v-for="movieEl in store.moviesList" class="col-6 col-md-3 single-card">
-                <img class="img-fluid" :src="movieEl.poster_path != null ? getImgPath(movieEl.poster_path) : 'https://m.media-amazon.com/images/I/51qqz9h3bYL._SL1409_.jpg'" alt="ciao" >
-                <h2>{{ movieEl.title }}</h2>
-                <h3>Titolo originale: {{ movieEl.original_title }}</h3>
-                <span :class="(movieEl.original_language != null) ? 'fi fi-'+movieEl.original_language : ''"></span> 
-                <span :class="(movieEl.original_language === 'en') ? 'fi fi-us' : ''"></span>
-                <p>Star: {{ movieEl.vote_average }}</p>
+        <div class="container">
+            <div class="row">
+                <div  v-for="movieEl in store.moviesList" class="col-6 col-md-3 single-card">
+                    <img class="img-fluid" :src="movieEl.poster_path != null ? getImgPath(movieEl.poster_path) : 'https://m.media-amazon.com/images/I/51qqz9h3bYL._SL1409_.jpg'" alt="ciao" >
+                    <h2>{{ movieEl.title }}</h2>
+                    <h3>Titolo originale: {{ movieEl.original_title }}</h3>
+                    <span :class="(movieEl.original_language != null) ? 'fi fi-'+movieEl.original_language : ''"></span> 
+                    <span :class="(movieEl.original_language === 'en') ? 'fi fi-us' : ''"></span>
+                    <p>Star: {{ movieEl.vote_average }}</p>
+                </div>
+                <div v-for="serieEl in store.seriesList" class="col-6 col-md-3 single-card">
+                    <img class="img-fluid" :src="serieEl.poster_path != null ? getImgPath(serieEl.poster_path) : 'https://m.media-amazon.com/images/I/51qqz9h3bYL._SL1409_.jpg' " alt="ciao">
+                    <h2>{{ serieEl.name }}</h2>
+                    <h3>Titolo originale: {{ serieEl.original_name }}</h3>
+                    <span :class="(serieEl.original_language != null) ? 'fi fi-'+serieEl.original_language : ''"></span> 
+                    <span :class="(serieEl.original_language === 'en') ? 'fi fi-us' : ''"></span>
+                    <p>Star: {{ serieEl.vote_average }}</p>
+                </div>
             </div>
         </div>
-        
-        <div class="row">
-            <div v-for="serieEl in store.seriesList" class="col-6 col-md-3 single-card">
-                <img class="img-fluid" :src="serieEl.poster_path != null ? getImgPath(serieEl.poster_path) : 'https://m.media-amazon.com/images/I/51qqz9h3bYL._SL1409_.jpg' " alt="ciao">
-                <h2>{{ serieEl.name }}</h2>
-                <h3>Titolo originale: {{ serieEl.original_name }}</h3>
-                <span :class="(serieEl.original_language != null) ? 'fi fi-'+serieEl.original_language : ''"></span> 
-                <span :class="(serieEl.original_language === 'en') ? 'fi fi-us' : ''"></span>
-                <p>Star: {{ serieEl.vote_average }}</p>
-            </div>
-        </div>
-       
     </div>
 </template>
 

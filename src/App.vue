@@ -26,6 +26,6 @@ export default{
 <style lang="scss">
   @use './style/general.scss' as*;
   @use './style/partial/variables' as*;
-  @import 'bootstrap/scss/bootstrap.scss'
+  @import 'bootstrap/scss/bootstrap.scss';
 
 </style>
